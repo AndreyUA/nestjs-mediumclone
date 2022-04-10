@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
 // Modules
-import { TagModule } from './tag/tag.module';
+import { TagModule } from '@app/tag/tag.module';
 
 @Module({
   imports: [TagModule],
