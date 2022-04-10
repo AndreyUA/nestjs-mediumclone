@@ -11,7 +11,7 @@ import { TagModule } from '@app/tag/tag.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DATABASE_HOST,
-      port: +process.env.DATABASE_PORT,
+      port: parseInt(process.env.DATABASE_PORT),
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: 'mediumclone',
