@@ -15,6 +15,8 @@ import { TagModule } from '@app/tag/tag.module';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: 'mediumclone',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
     }),
     TagModule,
   ],
