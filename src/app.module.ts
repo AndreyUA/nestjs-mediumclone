@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 // Modules
 import { TagModule } from '@app/tag/tag.module';
+import { UserModule } from './user/user.module';
 
 // Configs
 import { ormConfig } from './ormConfig';
@@ -16,6 +17,7 @@ import { ormConfig } from './ormConfig';
     }),
     TypeOrmModule.forRoot(ormConfig()),
     TagModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
