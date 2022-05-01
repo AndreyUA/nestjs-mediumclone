@@ -5,9 +5,7 @@ import { UserService } from '@app/user/user.service';
 
 // Types
 import { CreateUserDto } from '@app/user/dto/createUser.dto';
-
-// Entities
-import { UserEntity } from '@app/user/user.entity';
+import { UserResponseProps } from '@app/user/types/userResponce.intergace';
 
 @Controller()
 export class UserController {
@@ -16,7 +14,9 @@ export class UserController {
   @Post('users')
   async createUser(
     @Body('user') createUserDto: CreateUserDto,
-  ): Promise<UserEntity> {
-    return this.userService.createUser(createUserDto);
+  ): Promise<UserResponseProps> {
+    const user = await this.userService.createUser(createUserDto);
+
+    return this.userService.buildUserResponse(user);
   }
 }
